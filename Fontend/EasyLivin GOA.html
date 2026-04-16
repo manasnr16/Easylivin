@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EasyLiving Goa – Find Your Perfect Property in Goa</title>
+  <meta name="description" content="Goa's trusted property agency. Buy, sell or rent villas, apartments, plots and Portuguese houses across North and South Goa."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --clay:#c8714a;--clay-lt:#e8956d;--clay-dk:#a0522d;
+    --sand:#f5ede3;--sand-dk:#ecddd0;--earth:#3d2b1f;--earth-lt:#6b4c3b;
+    --sage:#7a8c6e;--sage-lt:#a5b593;--cream:#fdf8f3;
+    --border:#e0d3c7;--r:14px;
+    --shadow:0 4px 24px rgba(61,43,31,.10);--shadow-lg:0 12px 48px rgba(61,43,31,.16);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;color:var(--earth);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+  ::selection{background:#e8956d55;color:var(--earth)}
+  ::-webkit-scrollbar{width:5px}
+  ::-webkit-scrollbar-track{background:var(--sand)}
+  ::-webkit-scrollbar-thumb{background:var(--clay-lt);border-radius:99px}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .section{padding:80px 0}
+  .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--clay);margin-bottom:12px}
+  .tag::before{content:'';width:28px;height:1.5px;background:var(--clay);display:block}
+  .h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:600;color:var(--earth);line-height:1.15;letter-spacing:-.01em}
+  .h2 em{font-style:italic;color:var(--clay)}
+  .sub{font-size:16px;color:var(--earth-lt);line-height:1.75;max-width:540px;margin-top:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-weight:600;cursor:pointer;border:none;transition:all .22s;border-radius:var(--r)}
+  .btn-clay{background:var(--clay);color:#fff;padding:14px 30px;font-size:14px;box-shadow:0 4px 18px rgba(200,113,74,.35)}
+  .btn-clay:hover{background:var(--clay-dk);transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:var(--clay);border:1.5px solid var(--clay);padding:12px 26px;font-size:14px}
+  .btn-outline:hover{background:var(--clay);color:#fff}
+
+  /* ── NAVBAR ── */
+  #nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s}
+  #nav.solid{background:rgba(253,248,243,.97);backdrop-filter:blur(12px);box-shadow:0 1px 20px rgba(61,43,31,.08);padding:12px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{width:38px;height:38px;border-radius:10px;background:var(--clay);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;box-shadow:0 4px 14px rgba(200,113,74,.4);flex-shrink:0}
+  .logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;transition:color .3s}
+  .logo-text span{color:rgba(255,255,255,.6)}
+  #nav.solid .logo-text{color:var(--earth)}
+  #nav.solid .logo-text span{color:var(--clay-lt)}
+  .nav-links{display:flex;list-style:none;gap:2px;align-items:center}
+  .nav-links a{padding:8px 13px;border-radius:9px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.85);transition:all .2s}
+  .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
+  #nav.solid .nav-links a{color:var(--earth-lt)}
+  #nav.solid .nav-links a:hover{background:var(--sand);color:var(--clay)}
+  .nav-ctas{display:flex;align-items:center;gap:10px}
+  .btn-nav{padding:9px 18px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s;border:1.5px solid rgba(255,255,255,.35);color:#fff;background:transparent}
+  .btn-nav:hover{background:rgba(255,255,255,.15)}
+  #nav.solid .btn-nav{border-color:var(--border);color:var(--earth-lt)}
+  #nav.solid .btn-nav:hover{background:var(--sand);color:var(--clay)}
+  .btn-nav-post{padding:10px 20px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Jost',sans-serif;background:var(--clay);color:#fff;border:none;transition:all .2s;box-shadow:0 4px 14px rgba(200,113,74,.4)}
+  .btn-nav-post:hover{background:var(--clay-dk);transform:translateY(-1px)}
+  @media(max-width:900px){.nav-links{display:none}}
+  @media(max-width:560px){.nav-ctas .btn-nav{display:none}}
+
+  /* ── HERO ── */
+  #hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background-image:url('https://videos.openai.com/az/vg-assets/task_01kpat51keetrs6f93j0zvgeez%2F1776331969_img_2.webp?se=2026-04-19T00%3A00%3A00Z&sp=r&sv=2026-02-06&sr=b&skoid=5e5fc900-07cf-43e7-ab5b-314c0d877bb0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-15T16%3A18%3A53Z&ske=2026-04-22T16%3A23%3A53Z&sks=b&skv=2026-02-06&sig=yDEmbLc%2B7kuqWxFqtxciioFBCC%2BV3q9sTwI24u2POm8%3D&ac=oaivgprodscus2');background-size:cover;background-position:center 30%}
+  .hero-ov1{position:absolute;inset:0;background:linear-gradient(160deg,rgba(25,11,4,.82) 0%,rgba(25,11,4,.55) 55%,rgba(25,11,4,.25) 100%)}
+  .hero-ov2{position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(to top,rgba(12,5,2,.88),transparent)}
+  .hero-tile{position:absolute;top:60px;right:60px;width:220px;height:220px;background-image:repeating-linear-gradient(45deg,rgba(200,113,74,.07) 0,rgba(200,113,74,.07) 1px,transparent 1px,transparent 12px),repeating-linear-gradient(-45deg,rgba(200,113,74,.07) 0,rgba(200,113,74,.07) 1px,transparent 1px,transparent 12px);border:1px solid rgba(200,113,74,.15);border-radius:4px;pointer-events:none}
+  @media(max-width:768px){.hero-tile{display:none}}
+  .hero-content{position:relative;z-index:10;padding:130px 0 0}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(200,113,74,.18);backdrop-filter:blur(8px);border:1px solid rgba(200,113,74,.3);color:rgba(255,255,255,.9);padding:8px 18px;border-radius:99px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px}
+  .hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--clay-lt);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+  .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,7vw,92px);font-weight:600;color:#fff;line-height:1.0;letter-spacing:-.02em;margin-bottom:20px}
+  .hero-h1 em{font-style:italic;color:rgba(232,149,109,.9)}
+  .hero-h1 .sub-line{display:block;font-weight:400;font-size:.68em;color:rgba(255,255,255,.65);letter-spacing:.02em;margin-top:6px}
+  .hero-sub{color:rgba(255,255,255,.65);font-size:16.5px;line-height:1.75;max-width:520px;margin-bottom:32px}
+
+  /* ── SINGLE LINE SEARCH ── */
+  /* ── single-line search bar ── */
+  .search-wrap{
+    background:rgba(253,248,243,.97);backdrop-filter:blur(12px);
+    border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.32);
+    display:flex;align-items:stretch;
+    max-width:1020px;margin-bottom:10px;
+    overflow:hidden;flex-wrap:nowrap;
+    height:62px;
+  }
+  .sf{
+    display:flex;flex-direction:column;justify-content:center;
+    padding:0 16px;border-right:1px solid var(--border);
+    min-width:0;flex-shrink:1;height:100%;
+  }
+  .sf-label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--clay);margin-bottom:2px;white-space:nowrap}
+  .sf select{
+    border:none;outline:none;background:transparent;
+    font-family:'Jost',sans-serif;font-size:13px;color:var(--earth);font-weight:500;
+    appearance:none;-webkit-appearance:none;cursor:pointer;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;
+  }
+  .sf-look{flex:0 0 88px}
+  .sf-cat{flex:0 0 188px}
+  .sf-loc{flex:1 1 150px}
+  .sf-min,.sf-max{flex:0 0 110px}
+  .search-go{
+    background:var(--clay);color:#fff;border:none;cursor:pointer;
+    padding:0 26px;font-family:'Jost',sans-serif;font-size:14px;font-weight:700;
+    display:flex;align-items:center;gap:8px;transition:all .2s;
+    white-space:nowrap;flex:0 0 auto;box-shadow:-4px 0 20px rgba(200,113,74,.25);
+  }
+  .search-go:hover{background:var(--clay-dk)}
+  .surround-row{display:flex;align-items:center;gap:7px;margin-bottom:20px}
+  .surround-row input{accent-color:var(--clay);cursor:pointer;width:13px;height:13px}
+  .surround-row label{font-size:12px;color:rgba(255,255,255,.55);cursor:pointer}
+  .search-count{font-size:12.5px;color:rgba(255,255,255,.48);position:relative;z-index:10;padding-bottom:24px}
+  .search-count b{color:rgba(255,255,255,.78)}
+  @media(max-width:860px){
+    .search-wrap{flex-wrap:wrap;height:auto}
+    .sf{flex:1 1 45%;border-right:none;border-bottom:1px solid var(--border);height:52px;padding:0 14px}
+    .sf-look{flex:1 1 45%}
+    .search-go{flex:1 1 100%;justify-content:center;height:48px;padding:0}
+  }
+
+
+  /* Stats */
+  .hero-stats{position:relative;z-index:10;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.08)}
+  .hsi{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 0}
+  @media(max-width:560px){.hsi{grid-template-columns:repeat(2,1fr);gap:14px;padding:18px 0}}
+  .hs{text-align:center}
+  .hs-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#fff}
+  .hs-l{font-size:11px;color:rgba(255,255,255,.48);margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
+
+  /* ── QUICK TYPES ── */
+  .qtypes{padding:30px 0;background:#fff;border-bottom:1px solid var(--border)}
+  .qti{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .qti::-webkit-scrollbar{display:none}
+  .qtype{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 20px;border-radius:14px;border:1.5px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;flex-shrink:0;min-width:88px}
+  .qtype:hover,.qtype.on{border-color:var(--clay);background:var(--sand)}
+  .qtype-icon{width:38px;height:38px;border-radius:9px;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s}
+  .qtype:hover .qtype-icon,.qtype.on .qtype-icon{background:rgba(200,113,74,.15)}
+  .qtype-name{font-size:11px;font-weight:600;color:var(--earth-lt);text-align:center;line-height:1.3}
+  .qtype:hover .qtype-name,.qtype.on .qtype-name{color:var(--clay)}
+
+  /* ── PROPERTIES ── */
+  .sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+  .ftabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+  .ftab{padding:9px 20px;border-radius:99px;font-size:13px;font-weight:600;border:1.5px solid var(--border);background:#fff;color:var(--earth-lt);cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s;white-space:nowrap}
+  .ftab.on,.ftab:hover{background:var(--clay);color:#fff;border-color:var(--clay)}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+  .pc{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--border);transition:all .3s;cursor:pointer}
+  .pc:hover{box-shadow:var(--shadow-lg);transform:translateY(-5px);border-color:transparent}
+  .pc-img{position:relative;height:208px;overflow:hidden}
+  .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .pc:hover .pc-img img{transform:scale(1.06)}
+  .pc-tags{position:absolute;top:12px;left:12px;display:flex;gap:6px}
+  .pc-type-pill{position:absolute;bottom:12px;left:12px;background:rgba(253,248,243,.92);backdrop-filter:blur(4px);font-size:11px;font-weight:700;color:var(--earth);padding:5px 12px;border-radius:99px}
+  .pc-heart{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.88);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+  .pc-heart:hover{background:#fff;transform:scale(1.1)}
+  .pc-body{padding:18px 20px 20px}
+  .pc-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--clay);line-height:1}
+  .pc-pr{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+  .pc-title{font-size:14px;font-weight:600;color:var(--earth);margin-bottom:7px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pc-loc{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--earth-lt);margin-bottom:14px}
+  .pc-specs{display:flex;align-items:center;gap:14px;padding-top:12px;border-top:1px solid var(--sand-dk);font-size:12px;color:var(--earth-lt)}
+  .pc-verified{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--sage)}
+  .badge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:99px;font-size:11px;font-weight:600}
+  .bc{background:rgba(200,113,74,.12);color:var(--clay-dk)}
+  .bs{background:rgba(122,140,110,.12);color:var(--sage)}
+  .be{background:rgba(61,43,31,.08);color:var(--earth)}
+
+  /* ── LIFESTYLE ── */
+  .lifestyle{padding:70px 0;background:var(--sand);position:relative;overflow:hidden}
+  .lifestyle::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,var(--clay) 0,var(--clay) 20px,transparent 20px,transparent 30px)}
+  .ls-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  @media(max-width:768px){.ls-inner{grid-template-columns:1fr}}
+  .ls-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
+  .ls-img{border-radius:14px;overflow:hidden}
+  .ls-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .ls-img:hover img{transform:scale(1.04)}
+  .ls-img:first-child{grid-row:span 2;height:340px}
+  .ls-img:not(:first-child){height:160px}
+  .ls-badge{position:absolute;bottom:-16px;left:16px;background:var(--clay);color:#fff;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;padding:10px 18px;border-radius:12px;box-shadow:0 6px 20px rgba(200,113,74,.4);white-space:nowrap}
+  .ls-pts{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:16px}
+  .ls-pt{display:flex;gap:14px;align-items:flex-start}
+  .ls-pt-ico{width:40px;height:40px;border-radius:10px;background:rgba(200,113,74,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-top:2px}
+  .ls-pt h4{font-size:14.5px;font-weight:700;color:var(--earth);margin-bottom:3px}
+  .ls-pt p{font-size:13px;color:var(--earth-lt);line-height:1.6}
+
+  /* ── WHY ── */
+  .why{padding:80px 0;background:var(--earth);position:relative;overflow:hidden}
+  .why::after{content:'GOA';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:220px;font-weight:700;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;letter-spacing:-.05em}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
+  @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
+  .wcard{padding:28px 22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:all .3s}
+  .wcard:hover{background:rgba(255,255,255,.09);transform:translateY(-4px);border-color:rgba(200,113,74,.3)}
+  .wcard-ico{font-size:30px;margin-bottom:16px}
+  .wcard-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--clay-lt);margin-bottom:4px}
+  .wcard-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
+  .wcard-desc{font-size:13px;color:rgba(255,255,255,.48);line-height:1.7}
+
+  /* ── SERVICES ── */
+  .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  @media(max-width:900px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.sgrid{grid-template-columns:1fr}}
+  .scard{padding:26px 20px;border-radius:16px;border:1.5px solid var(--border);background:#fff;transition:all .3s;cursor:pointer}
+  .scard:hover{border-color:var(--clay-lt);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+  .scard-ico{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;transition:transform .3s}
+  .scard:hover .scard-ico{transform:scale(1.1)}
+  .scard-title{font-size:15px;font-weight:700;color:var(--earth);margin-bottom:7px;transition:color .2s}
+  .scard:hover .scard-title{color:var(--clay)}
+  .scard-desc{font-size:13px;color:var(--earth-lt);line-height:1.65;margin-bottom:14px}
+  .scard-link{font-size:13px;font-weight:600;color:var(--clay);display:flex;align-items:center;gap:4px}
+  .sarr{transition:transform .2s}
+  .scard:hover .sarr{transform:translateX(4px)}
+
+  /* ── BLOG ── */
+  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  @media(max-width:900px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.bgrid{grid-template-columns:1fr}}
+  .bcard{background:#fff;border-radius:16px;border:1px solid var(--border);overflow:hidden;transition:all .3s;cursor:pointer}
+  .bcard:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:transparent}
+  .bcard-img{height:188px;overflow:hidden}
+  .bcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .bcard:hover .bcard-img img{transform:scale(1.05)}
+  .bcard-body{padding:20px}
+  .bcard-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--earth);line-height:1.35;margin:10px 0 8px;transition:color .2s}
+  .bcard:hover .bcard-title{color:var(--clay)}
+  .bcard-exc{font-size:13px;color:var(--earth-lt);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px}
+  .bcard-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:#9a8a80;padding-top:12px;border-top:1px solid var(--sand-dk)}
+
+  /* ── CTA ── */
+  .cta-wrap{padding:80px 0;background:var(--sand)}
+  .cta-box{background:var(--clay);border-radius:24px;padding:60px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+  @media(max-width:768px){.cta-box{grid-template-columns:1fr;padding:36px 26px}}
+  .cta-pat{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 18px),repeating-linear-gradient(-45deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 18px)}
+  .cta-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.9);padding:7px 16px;border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+  .cta-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:600;color:#fff;margin-bottom:12px;line-height:1.15}
+  .cta-sub{color:rgba(255,255,255,.72);font-size:15px;line-height:1.75;margin-bottom:26px}
+  .cta-pts{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:30px}
+  .cta-pt{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.9)}
+  .cta-chk{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+  .cta-btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn-cw{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--clay);font-family:'Jost',sans-serif;font-weight:700;font-size:14px;padding:14px 30px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+  .btn-cw:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+  .btn-cg{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:'Jost',sans-serif;font-weight:600;font-size:14px;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;transition:all .2s}
+  .btn-cg:hover{background:rgba(255,255,255,.12)}
+  .cta-card{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:26px;min-width:230px}
+  @media(max-width:768px){.cta-card{display:none}}
+  .cta-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fff;margin-bottom:18px}
+  .cs{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:12px;font-size:13px}
+  .cs:last-child{border:none;margin:0;padding:0}
+  .csl{color:rgba(255,255,255,.62)}
+  .csv{color:#fff;font-weight:700}
+
+  /* ── FOOTER ── */
+  footer{background:#1a0b04;color:rgba(255,255,255,.55)}
+  .footer-main{padding:56px 0 36px}
+  .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px}
+  @media(max-width:900px){.fg{grid-template-columns:1fr 1fr;gap:28px}}
+  @media(max-width:480px){.fg{grid-template-columns:1fr}}
+  .fb p{font-size:13px;line-height:1.8;margin:14px 0 20px}
+  .sr{display:flex;gap:8px}
+  .sb{width:35px;height:35px;border-radius:9px;background:rgba(255,255,255,.07);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.55);transition:all .2s}
+  .sb:hover{background:var(--clay);color:#fff}
+  .fh{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.9);margin-bottom:16px}
+  .fl{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .fl a{font-size:13px;color:rgba(255,255,255,.48);transition:color .2s}
+  .fl a:hover{color:var(--clay-lt)}
+  .fc{display:flex;flex-direction:column;gap:12px}
+  .fci{display:flex;gap:10px;align-items:flex-start;font-size:13px}
+  .fci-i{color:var(--clay-lt);flex-shrink:0;margin-top:1px}
+  .fbot{border-top:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px}
+  .fleg{display:flex;gap:18px}
+  .fleg a{color:rgba(255,255,255,.32);transition:color .2s}
+  .fleg a:hover{color:var(--clay-lt)}
+
+  /* ── ANIM ── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  .fu{animation:fadeUp .7s ease both}
+  .fu1{animation:fadeUp .7s .1s ease both}
+  .fu2{animation:fadeUp .7s .2s ease both}
+  .fu3{animation:fadeUp .7s .3s ease both}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <div class="logo-mark">E</div>
+        <span class="logo-text">EasyLiving <span>Goa</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Buy Property</a></li>
+        <li><a href="#">Rent Property</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="nav-ctas">
+        <button class="btn-nav">Login / Signup</button>
+        <button class="btn-nav-post">+ Post Property</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div><div class="hero-ov1"></div><div class="hero-ov2"></div>
+  <div class="hero-tile"></div>
+
+  <div class="hero-content">
+    <div class="container">
+
+      <div class="hero-eyebrow fu">
+        <span></span>Goa's Trusted Property Specialists
+      </div>
+
+      <h1 class="hero-h1 fu1">
+        Your Dream Home<br>in <em>Paradise</em>
+        <span class="sub-line">Villas · Apartments · Plots · Portuguese Houses</span>
+      </h1>
+
+      <p class="hero-sub fu2">
+        Over 1,333 verified listings across every corner of Goa — from sun-drenched Calangute to the lush hills of Assagao and the heritage lanes of Fontainhas.
+      </p>
+
+      <!-- SINGLE LINE SEARCH BAR -->
+      <div class="search-wrap fu3">
+        <div class="sf sf-look">
+          <div class="sf-label">Looking To</div>
+          <select><option>Sale</option><option>Rent</option></select>
+        </div>
+        <div class="sf sf-cat">
+          <div class="sf-label">Category</div>
+          <select>
+            <option value="">— Any Category —</option>
+            <option>Apartments &amp; Penthouses</option>
+            <option>Agriculture / Farm / Orchard Land</option>
+            <option>Approved Projects</option>
+            <option>Beach / River Side Properties</option>
+            <option>Beauty Parlour</option>
+            <option>Boutique Resort</option>
+            <option>Bungalows &amp; Villas</option>
+            <option>Hotel</option>
+            <option>Industrial Sheds / Plots &amp; Godown</option>
+            <option>Office</option>
+            <option>Plots</option>
+            <option>Portuguese Houses / Goan House</option>
+            <option>Resort and Plots for Resorts</option>
+            <option>Resort for Lease / Rent</option>
+            <option>Restaurant</option>
+            <option>Row House &amp; Duplex</option>
+            <option>Shop &amp; Showrooms</option>
+            <option>Villa</option>
+          </select>
+        </div>
+        <div class="sf sf-loc">
+          <div class="sf-label">📍 Location</div>
+          <select>
+            <option value="">— Any Location —</option>
+            <option>Aldona</option><option>Altinho</option><option>Anjuna</option><option>Aquem</option><option>Arpora</option><option>Ashwem</option><option>Assagao</option><option>Badem</option><option>Baga</option><option>Bainguinim</option><option>Bambolim</option><option>Banasterim</option><option>Bastora</option><option>Benaulim</option><option>Betalbatim</option><option>Betim</option><option>Betul</option><option>Bhatlem</option><option>Bicholim</option><option>Bogmalo</option><option>Calangute</option><option>Campal</option><option>Canacona</option><option>Candolim</option><option>Caranzalem</option><option>Carmona</option><option>Cavelossim</option><option>Chapora</option><option>Chicalim</option><option>Chimbel</option><option>Chorao</option><option>Colva</option><option>Colvale</option><option>Corlim</option><option>Cortalim</option><option>Curca</option><option>Curchorem</option><option>Dabolim</option><option>Diwar</option><option>Dona Paula</option><option>Duler</option><option>Goa Velha</option><option>Gogol</option><option>Guirim</option><option>Kadamba Plateau</option><option>Kerim</option><option>Loutolim</option><option>Mandrem</option><option>Mapusa</option><option>Marcela</option><option>Margao</option><option>Merces</option><option>Miramar</option><option>Moira</option><option>Mopa</option><option>Morgim</option><option>Morjim</option><option>Nachinola</option><option>Nagoa</option><option>Navelim</option><option>Nerul</option><option>North Goa</option><option>Old Goa</option><option>Oxel</option><option>Panjim</option><option>Parra</option><option>Pernem</option><option>Pilar</option><option>Pilerne</option><option>Pomburpa</option><option>Ponda</option><option>Porvorim</option><option>Porvorim - Salvador do Mundo</option><option>Porvorim - Succour</option><option>Raibander</option><option>Reis Magos</option><option>Saligao</option><option>Sangolda</option><option>Salvador do Mundo</option><option>Sernabhatim</option><option>Siolim</option><option>South Goa</option><option>St. Cruz</option><option>St. Inez</option><option>Succour</option><option>Taleigao</option><option>Tambdi Surla</option><option>Tivim</option><option>Tonca</option><option>Uccassaim</option><option>Vagator</option><option>Valpoi</option><option>Varca</option><option>Vasco</option><option>Verem</option><option>Verla</option><option>Verna</option>
+          </select>
+        </div>
+        <div class="sf sf-min">
+          <div class="sf-label">Min Price</div>
+          <select><option value="">No Min</option><option>₹5 Lakhs</option><option>₹10 Lakhs</option><option>₹20 Lakhs</option><option>₹30 Lakhs</option><option>₹50 Lakhs</option><option>₹75 Lakhs</option><option>₹1 Crore</option><option>₹1.5 Crore</option><option>₹2 Crore</option><option>₹3 Crore</option><option>₹5 Crore</option><option>₹10 Crore+</option></select>
+        </div>
+        <div class="sf sf-max">
+          <div class="sf-label">Max Price</div>
+          <select><option value="">No Max</option><option>₹10 Lakhs</option><option>₹20 Lakhs</option><option>₹30 Lakhs</option><option>₹50 Lakhs</option><option>₹75 Lakhs</option><option>₹1 Crore</option><option>₹1.5 Crore</option><option>₹2 Crore</option><option>₹3 Crore</option><option>₹5 Crore</option><option>₹10 Crore+</option></select>
+        </div>
+        <button class="search-go">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
+      </div>
+
+      <div class="surround-row">
+        <input type="checkbox" id="surr"/>
+        <label for="surr">Include surrounding areas</label>
+      </div>
+      <div class="search-count fu3"><b>1,333+</b> properties listed across Goa</div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="container">
+      <div class="hsi">
+        <div class="hs"><div class="hs-v">1,333+</div><div class="hs-l">Properties Listed</div></div>
+        <div class="hs"><div class="hs-v">10,000+</div><div class="hs-l">Happy Clients</div></div>
+        <div class="hs"><div class="hs-v">90+</div><div class="hs-l">Goa Locations</div></div>
+        <div class="hs"><div class="hs-v">15 Yrs</div><div class="hs-l">Local Expertise</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK TYPE NAV -->
+<div class="qtypes">
+  <div class="container">
+    <div class="qti">
+      <div class="qtype on" onclick="qfilter(this)"><div class="qtype-icon">🏠</div><div class="qtype-name">All Types</div></div>
+      <div class="qtype" onclick="qfilter(this)"><div class="qtype-icon">🌴</div><div class="qtype-name">Villas &amp; Houses</div></div>
+      <div class="qtype" onclick="qfilter(this)"><div class="qtype-icon">🏢</div><div class="qtype-name">Apartments</div></div>
+      <div class="qtype" onclick="qfilter(this)"><div class="qtype-icon">📐</div><div class="qtype-name">Plots &amp; Land</div></div>
+      <div class="qtype" onclick="qfilter(this)"><div class="qtype-icon">🏛️</div><div class="qtype-name">Portuguese Houses</div></div>
+      <div class="qtype" onclick="qfilter(this)"><div class="qtype-icon">🏪</div><div class="qtype-name">Commercial</div></div>
+      <div class="qtype" onclick="qfilter(this)"><div class="qtype-icon">🏖️</div><div class="qtype-name">Resorts &amp; Hotels</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED PROPERTIES -->
+<section class="section" style="background:var(--cream)" id="properties">
+  <div class="container">
+    <div class="sec-hdr">
+      <div>
+        <div class="tag">Hand-Picked Listings</div>
+        <h2 class="h2">Featured Properties <em>in Goa</em></h2>
+        <p class="sub">Curated villas, plots &amp; homes from verified owners and agents across North &amp; South Goa.</p>
+      </div>
+      <a href="#" class="btn btn-outline">View All →</a>
+    </div>
+    <div class="ftabs">
+      <button class="ftab on" onclick="fTab(this,'All')">All</button>
+      <button class="ftab" onclick="fTab(this,'Buy')">For Sale</button>
+      <button class="ftab" onclick="fTab(this,'Rent')">For Rent</button>
+      <button class="ftab" onclick="fTab(this,'Lease')">Lease</button>
+    </div>
+    <div class="pgrid" id="pgrid">
+
+      <div class="pc" data-p="Buy">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&auto=format&fit=crop&q=75" alt="Villa Candolim"/>
+          <div class="pc-tags"><span class="badge bc">Sea View</span></div>
+          <div class="pc-type-pill">Villa</div>
+          <button class="pc-heart" onclick="event.stopPropagation()">🤍</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-pr"><div class="pc-price">₹2.8 Cr</div><span class="badge be">For Sale</span></div>
+          <div class="pc-title">Sea-View 3BHK Villa in Candolim</div>
+          <div class="pc-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--clay)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Candolim, North Goa</div>
+          <div class="pc-specs"><span>🛏 3 BHK</span><span>📐 2400 sq.ft</span><span class="pc-verified">✓ Verified</span></div>
+        </div>
+      </div>
+
+      <div class="pc" data-p="Buy">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=75" alt="Villa Calangute"/>
+          <div class="pc-tags"><span class="badge bc">New Launch</span></div>
+          <div class="pc-type-pill">Villa</div>
+          <button class="pc-heart" onclick="event.stopPropagation()">🤍</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-pr"><div class="pc-price">₹4.5 Cr</div><span class="badge be">For Sale</span></div>
+          <div class="pc-title">Luxury Beachfront Villa – Calangute</div>
+          <div class="pc-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--clay)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Calangute, North Goa</div>
+          <div class="pc-specs"><span>🛏 4 BHK</span><span>📐 3800 sq.ft</span><span class="pc-verified">✓ Builder</span></div>
+        </div>
+      </div>
+
+      <div class="pc" data-p="Rent">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&auto=format&fit=crop&q=75" alt="Apartment Panjim"/>
+          <div class="pc-tags"><span class="badge bs">Semi-Furnished</span></div>
+          <div class="pc-type-pill">Apartment</div>
+          <button class="pc-heart" onclick="event.stopPropagation()">🤍</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-pr"><div class="pc-price">₹28K/mo</div><span class="badge be">For Rent</span></div>
+          <div class="pc-title">2BHK Apartment for Rent – Panjim</div>
+          <div class="pc-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--clay)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Panjim, North Goa</div>
+          <div class="pc-specs"><span>🛏 2 BHK</span><span>📐 1050 sq.ft</span><span class="pc-verified">✓ Owner</span></div>
+        </div>
+      </div>
+
+      <div class="pc" data-p="Buy">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=75" alt="Plot Baga"/>
+          <div class="pc-tags"><span class="badge bc">Beach Proximity</span></div>
+          <div class="pc-type-pill">Plot</div>
+          <button class="pc-heart" onclick="event.stopPropagation()">🤍</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-pr"><div class="pc-price">₹1.1 Cr</div><span class="badge be">For Sale</span></div>
+          <div class="pc-title">Freehold NA Plot Near Baga Beach</div>
+          <div class="pc-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--clay)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Baga, North Goa</div>
+          <div class="pc-specs"><span>📐 1800 sq.ft</span><span>NA Converted</span><span class="pc-verified">✓ Owner</span></div>
+        </div>
+      </div>
+
+      <div class="pc" data-p="Lease">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&auto=format&fit=crop&q=75" alt="Portuguese Villa Fontainhas"/>
+          <div class="pc-tags"><span class="badge bc">Heritage</span></div>
+          <div class="pc-type-pill">Portuguese House</div>
+          <button class="pc-heart" onclick="event.stopPropagation()">🤍</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-pr"><div class="pc-price">₹85K/mo</div><span class="badge be">Lease</span></div>
+          <div class="pc-title">Heritage Portuguese Villa – Fontainhas</div>
+          <div class="pc-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--clay)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Fontainhas, Panjim</div>
+          <div class="pc-specs"><span>🛏 3 BHK</span><span>📐 2900 sq.ft</span><span class="pc-verified">✓ Agent</span></div>
+        </div>
+      </div>
+
+      <div class="pc" data-p="Buy">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=600&auto=format&fit=crop&q=75" alt="Plot Assagao"/>
+          <div class="pc-tags"><span class="badge bs">NA Converted</span></div>
+          <div class="pc-type-pill">Plot</div>
+          <button class="pc-heart" onclick="event.stopPropagation()">🤍</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-pr"><div class="pc-price">₹72 Lakhs</div><span class="badge be">For Sale</span></div>
+          <div class="pc-title">Riverside Plot in Assagao</div>
+          <div class="pc-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--clay)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Assagao, North Goa</div>
+          <div class="pc-specs"><span>📐 2200 sq.ft</span><span>Riverside</span><span class="pc-verified">✓ Builder</span></div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:44px">
+      <a href="#" class="btn btn-clay" style="font-size:15px;padding:15px 40px">Explore All Goa Properties <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- GOA LIFESTYLE -->
+<section class="lifestyle">
+  <div class="container">
+    <div class="ls-inner">
+      <div class="ls-imgs">
+        <div class="ls-img" style="grid-row:span 2;height:340px"><img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=500&auto=format&fit=crop&q=80" alt="Goa beach" style="height:100%"/></div>
+        <div class="ls-img" style="height:160px"><img src="https://images.unsplash.com/photo-1590073844006-33379778ae09?w=400&auto=format&fit=crop&q=80" alt="Goa villa"/></div>
+        <div class="ls-img" style="height:160px"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&auto=format&fit=crop&q=80" alt="Goa pool"/></div>
+        <div class="ls-badge">🌴 Live the Goa Dream</div>
+      </div>
+      <div>
+        <div class="tag">Why Invest in Goa</div>
+        <h2 class="h2">More Than a Property —<br>It's a <em>Lifestyle</em></h2>
+        <p class="sub">Goa isn't just a destination — it's a way of life. Azure beaches, lush paddy fields, Portuguese heritage and a pace that restores the soul.</p>
+        <ul class="ls-pts">
+          <li class="ls-pt">
+            <div class="ls-pt-ico">🏖️</div>
+            <div><h4>Beach &amp; Riverside Living</h4><p>From Candolim to Cavelossim, wake up to the sound of waves. Properties within minutes of Goa's 100+ km coastline.</p></div>
+          </li>
+          <li class="ls-pt">
+            <div class="ls-pt-ico">🏛️</div>
+            <div><h4>Portuguese Heritage</h4><p>Centuries-old Goan houses in Fontainhas, Saligao and Moira offer unmatched character and architectural beauty.</p></div>
+          </li>
+          <li class="ls-pt">
+            <div class="ls-pt-ico">📈</div>
+            <div><h4>Strong Investment Returns</h4><p>Goa property values have grown 12–18% YoY in prime belts. Holiday rental yields of 6–9% make it a smart buy.</p></div>
+          </li>
+        </ul>
+        <div style="margin-top:28px">
+          <a href="#" class="btn btn-clay">Explore Goa Locations →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <div class="container">
+    <div class="tag" style="color:var(--clay-lt)">Why EasyLiving Goa</div>
+    <h2 class="h2" style="color:#fff">Goa's Most Trusted <em>Property Partner</em></h2>
+    <p class="sub" style="color:rgba(255,255,255,.52)">We live here. We know every lane, every beach road and every emerging neighbourhood — so you don't have to guess.</p>
+    <div class="why-grid">
+      <div class="wcard"><div class="wcard-ico">🏡</div><div class="wcard-num">1,333+</div><div class="wcard-title">Verified Listings</div><div class="wcard-desc">Every property is physically inspected. No fake listings, no outdated prices — only real, verified properties.</div></div>
+      <div class="wcard"><div class="wcard-ico">📍</div><div class="wcard-num">90+</div><div class="wcard-title">Goa Locations</div><div class="wcard-desc">From Pernem in the north to Canacona in the south — we cover every village, ward and micro-market in Goa.</div></div>
+      <div class="wcard"><div class="wcard-ico">🤝</div><div class="wcard-num">15 Yrs</div><div class="wcard-title">Local Expertise</div><div class="wcard-desc">Born and raised in Goa. Our agents understand NA conversion, freehold vs leasehold like no one else.</div></div>
+      <div class="wcard"><div class="wcard-ico">⭐</div><div class="wcard-num">4.9★</div><div class="wcard-title">Client Rating</div><div class="wcard-desc">Over 4,800 five-star reviews from buyers, sellers, NRIs and investors who found their perfect Goa property with us.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" style="background:var(--cream)">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="tag" style="justify-content:center">Our Services</div>
+      <h2 class="h2" style="text-align:center">Everything You Need,<br><em>Under One Roof</em></h2>
+      <p class="sub" style="margin:10px auto 0;text-align:center">From your first property visit to the final registration stamp — we handle it all.</p>
+    </div>
+    <div class="sgrid">
+      <div class="scard"><div class="scard-ico" style="background:rgba(200,113,74,.1)">🎨</div><div class="scard-title">Interior Design</div><div class="scard-desc">Transform your Goa property with curated tropical and Portuguese-inspired interiors.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+      <div class="scard"><div class="scard-ico" style="background:rgba(122,140,110,.12)">⚖️</div><div class="scard-title">Legal &amp; Documentation</div><div class="scard-desc">NA conversion, title verification, registration — our Goa-specialist legal team handles it all.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+      <div class="scard"><div class="scard-ico" style="background:rgba(200,113,74,.08)">🏦</div><div class="scard-title">Loan Assistance</div><div class="scard-desc">Best home loan offers across all major banks. Instant eligibility check, zero paperwork hassle.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+      <div class="scard"><div class="scard-ico" style="background:rgba(61,43,31,.07)">🏠</div><div class="scard-title">Property Management</div><div class="scard-desc">Own a Goa villa but live elsewhere? We manage tenants, maintenance and Airbnb rentals for you.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section" style="background:var(--sand)" id="blog">
+  <div class="container">
+    <div class="sec-hdr">
+      <div>
+        <div class="tag">Goa Property Insights</div>
+        <h2 class="h2">Know Before You <em>Buy</em></h2>
+        <p class="sub">Local market trends, legal guides and expert advice — written by people who actually live in Goa.</p>
+      </div>
+      <a href="#" class="btn btn-outline">All Articles →</a>
+    </div>
+    <div class="bgrid">
+      <div class="bcard">
+        <div class="bcard-img"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&auto=format&fit=crop&q=75" alt=""/></div>
+        <div class="bcard-body">
+          <span class="badge bc">Buyer's Guide</span>
+          <div class="bcard-title">Buying Property in Goa as an Outsider: Rules, Restrictions &amp; What You Must Know</div>
+          <div class="bcard-exc">Non-Goans and NRIs often get caught off guard by local land laws. A complete guide to freehold vs leasehold and NA conversion.</div>
+          <div class="bcard-meta"><span>👤 Rohan D'Souza</span><span>⏱ 7 min</span><span style="margin-left:auto">Apr 2, 2025</span></div>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-img"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&auto=format&fit=crop&q=75" alt=""/></div>
+        <div class="bcard-body">
+          <span class="badge bs">Investment</span>
+          <div class="bcard-title">North Goa vs South Goa: Which is a Better Investment in 2025?</div>
+          <div class="bcard-exc">Candolim dominates headlines, but South Goa's Benaulim and Cavelossim are quietly delivering better returns.</div>
+          <div class="bcard-meta"><span>👤 Priya Naik</span><span>⏱ 6 min</span><span style="margin-left:auto">Mar 24, 2025</span></div>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-img"><img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=75" alt=""/></div>
+        <div class="bcard-body">
+          <span class="badge be">Legal Guide</span>
+          <div class="bcard-title">What is NA Conversion in Goa and Why It Matters Before You Buy a Plot</div>
+          <div class="bcard-exc">Agricultural land cannot be built without NA conversion. Here's the timeline, costs and red flags to watch for.</div>
+          <div class="bcard-meta"><span>👤 Adv. Carlos Fernandes</span><span>⏱ 5 min</span><span style="margin-left:auto">Mar 15, 2025</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-pat"></div>
+      <div style="position:relative;z-index:1">
+        <div class="cta-tag">🏠 For Property Owners in Goa</div>
+        <h2 class="cta-h2">List Your Goa Property —<br>Completely Free</h2>
+        <p class="cta-sub">Connect with thousands of qualified buyers, NRIs and investors actively searching for property in Goa right now.</p>
+        <ul class="cta-pts">
+          <li class="cta-pt"><span class="cta-chk">✓</span>Free listing for 30 days</li>
+          <li class="cta-pt"><span class="cta-chk">✓</span>Reach 1,333+ active Goa buyers</li>
+          <li class="cta-pt"><span class="cta-chk">✓</span>Verified badge on your listing</li>
+          <li class="cta-pt"><span class="cta-chk">✓</span>Dedicated Goa-specialist agent support</li>
+        </ul>
+        <div class="cta-btns">
+          <button class="btn-cw">+ Post Property Free →</button>
+          <button class="btn-cg">Talk to an Agent</button>
+        </div>
+      </div>
+      <div class="cta-card" style="position:relative;z-index:1">
+        <h3>Why Sellers Choose Us</h3>
+        <div class="cs"><span class="csl">First Inquiry Within</span><span class="csv">&lt; 48 Hours</span></div>
+        <div class="cs"><span class="csl">Properties Sold Last Month</span><span class="csv">120+</span></div>
+        <div class="cs"><span class="csl">Seller Satisfaction</span><span class="csv">4.9 / 5</span></div>
+        <div class="cs"><span class="csl">NRI Clients Served</span><span class="csv">600+</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="fg">
+        <div class="fb">
+          <div class="logo"><div class="logo-mark">E</div><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff">EasyLiving <span style="color:var(--clay-lt)">Goa</span></span></div>
+          <p>Goa's trusted property specialists. Connecting buyers, sellers and renters with verified properties across every corner of Goa since 2009.</p>
+          <div class="sr"><button class="sb">f</button><button class="sb">𝕏</button><button class="sb">in</button><button class="sb">▶</button><button class="sb">📷</button></div>
+        </div>
+        <div>
+          <div class="fh">Quick Links</div>
+          <ul class="fl"><li><a href="#">Home</a></li><li><a href="#">Buy Property</a></li><li><a href="#">Rent Property</a></li><li><a href="#">Post Your Property</a></li><li><a href="#">About Us</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact Us</a></li></ul>
+        </div>
+        <div>
+          <div class="fh">Our Services</div>
+          <ul class="fl"><li><a href="#">Interior Design</a></li><li><a href="#">Legal Services</a></li><li><a href="#">Home Loan Assistance</a></li><li><a href="#">Property Management</a></li><li><a href="#">NA Conversion Help</a></li><li><a href="#">NRI Services</a></li><li><a href="#">Holiday Rental Mgmt</a></li></ul>
+        </div>
+        <div>
+          <div class="fh">Get In Touch</div>
+          <div class="fc">
+            <div class="fci"><span class="fci-i">📍</span><span>Shop No. 5, Alfran Plaza,<br>MG Road, Panaji, Goa 403001</span></div>
+            <div class="fci"><span class="fci-i">📞</span><a href="tel:+919326128767" style="color:rgba(255,255,255,.48)">+91 93261 28767</a></div>
+            <div class="fci"><span class="fci-i">✉️</span><a href="mailto:hello@easylivinggoa.in" style="color:rgba(255,255,255,.48)">hello@easylivinggoa.in</a></div>
+            <div class="fci"><span class="fci-i">🕐</span><span>Mon–Sat: 9am – 6pm<br>Sun: By Appointment</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="fbot">
+      <span>© 2025 EasyLiving Goa. All rights reserved.</span>
+      <div class="fleg"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">FAQ</a><a href="#">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 30));
+
+  function fTab(el, p) {
+    document.querySelectorAll('.ftab').forEach(t => t.classList.remove('on'));
+    el.classList.add('on');
+    document.querySelectorAll('.pc').forEach(c => {
+      const show = p === 'All' || c.dataset.p === p;
+      c.style.display = show ? 'block' : 'none';
+      if (show) { c.style.opacity = '0'; c.style.transform = 'translateY(16px)'; setTimeout(() => { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, 20); }
+    });
+  }
+
+  function qfilter(el) {
+    document.querySelectorAll('.qtype').forEach(q => q.classList.remove('on'));
+    el.classList.add('on');
+  }
+
+  document.querySelectorAll('.pc-heart').forEach(btn => {
+    btn.addEventListener('click', () => btn.textContent = btn.textContent === '🤍' ? '❤️' : '🤍');
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.pc,.bcard,.scard,.wcard,.ls-pt,.qtype').forEach(el => {
+    el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .6s ease, transform .6s ease';
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>
