@@ -2,314 +2,265 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EasyLiving Goa – Find Your Perfect Property in Goa</title>
-  <meta name="description" content="Goa's trusted property agency. Buy, sell or rent villas, apartments, plots and Portuguese houses across North and South Goa."/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EasyLiving Goa — Goa's Most Trusted Property Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --clay:#c8714a;--clay-lt:#e8956d;--clay-dk:#a0522d;
-    --sand:#f5ede3;--sand-dk:#ecddd0;--earth:#3d2b1f;--earth-lt:#6b4c3b;
-    --sage:#7a8c6e;--sage-lt:#a5b593;--cream:#fdf8f3;
-    --border:#e0d3c7;--r:14px;
-    --shadow:0 4px 24px rgba(61,43,31,.10);--shadow-lg:0 12px 48px rgba(61,43,31,.16);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'Jost',sans-serif;color:var(--earth);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{text-decoration:none;color:inherit}
-  img{display:block;max-width:100%}
-  ::selection{background:#e8956d55;color:var(--earth)}
-  ::-webkit-scrollbar{width:5px}
-  ::-webkit-scrollbar-track{background:var(--sand)}
-  ::-webkit-scrollbar-thumb{background:var(--clay-lt);border-radius:99px}
-  .container{max-width:1200px;margin:0 auto;padding:0 24px}
-  .section{padding:80px 0}
-  .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--clay);margin-bottom:12px}
-  .tag::before{content:'';width:28px;height:1.5px;background:var(--clay);display:block}
-  .h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:600;color:var(--earth);line-height:1.15;letter-spacing:-.01em}
-  .h2 em{font-style:italic;color:var(--clay)}
-  .sub{font-size:16px;color:var(--earth-lt);line-height:1.75;max-width:540px;margin-top:10px}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-weight:600;cursor:pointer;border:none;transition:all .22s;border-radius:var(--r)}
-  .btn-clay{background:var(--clay);color:#fff;padding:14px 30px;font-size:14px;box-shadow:0 4px 18px rgba(200,113,74,.35)}
-  .btn-clay:hover{background:var(--clay-dk);transform:translateY(-2px)}
-  .btn-outline{background:transparent;color:var(--clay);border:1.5px solid var(--clay);padding:12px 26px;font-size:14px}
-  .btn-outline:hover{background:var(--clay);color:#fff}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    img{display:block;width:100%;height:100%;object-fit:cover}
 
-  /* ── NAVBAR ── */
-  #nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s}
-  #nav.solid{background:rgba(253,248,243,.97);backdrop-filter:blur(12px);box-shadow:0 1px 20px rgba(61,43,31,.08);padding:12px 0}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .logo{display:flex;align-items:center;gap:10px}
-  .logo-mark{width:38px;height:38px;border-radius:10px;background:var(--clay);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;box-shadow:0 4px 14px rgba(200,113,74,.4);flex-shrink:0}
-  .logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;transition:color .3s}
-  .logo-text span{color:rgba(255,255,255,.6)}
-  #nav.solid .logo-text{color:var(--earth)}
-  #nav.solid .logo-text span{color:var(--clay-lt)}
-  .nav-links{display:flex;list-style:none;gap:2px;align-items:center}
-  .nav-links a{padding:8px 13px;border-radius:9px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.85);transition:all .2s}
-  .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
-  #nav.solid .nav-links a{color:var(--earth-lt)}
-  #nav.solid .nav-links a:hover{background:var(--sand);color:var(--clay)}
-  .nav-ctas{display:flex;align-items:center;gap:10px}
-  .btn-nav{padding:9px 18px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s;border:1.5px solid rgba(255,255,255,.35);color:#fff;background:transparent}
-  .btn-nav:hover{background:rgba(255,255,255,.15)}
-  #nav.solid .btn-nav{border-color:var(--border);color:var(--earth-lt)}
-  #nav.solid .btn-nav:hover{background:var(--sand);color:var(--clay)}
-  .btn-nav-post{padding:10px 20px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Jost',sans-serif;background:var(--clay);color:#fff;border:none;transition:all .2s;box-shadow:0 4px 14px rgba(200,113,74,.4)}
-  .btn-nav-post:hover{background:var(--clay-dk);transform:translateY(-1px)}
-  @media(max-width:900px){.nav-links{display:none}}
-  @media(max-width:560px){.nav-ctas .btn-nav{display:none}}
+    :root{
+      --clay:    #0096C7;
+      --clay-lt: #00B4D8;
+      --sand:    #F4FAFF;
+      --cream:   #FAFCFF;
+      --dark:    #0A2540;
+      --text:    #1E3A5F;
+      --muted:   #5A7FA0;
+      --white:   #ffffff;
+      --teal:    #48CAE4;
+      --teal-lt: #ADE8F4;
+      --border:  rgba(0,150,199,.14);
+    }
 
-  /* ── HERO ── */
-  #hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;background-image:url('https://videos.openai.com/az/vg-assets/task_01kpat51keetrs6f93j0zvgeez%2F1776331969_img_2.webp?se=2026-04-19T00%3A00%3A00Z&sp=r&sv=2026-02-06&sr=b&skoid=5e5fc900-07cf-43e7-ab5b-314c0d877bb0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-15T16%3A18%3A53Z&ske=2026-04-22T16%3A23%3A53Z&sks=b&skv=2026-02-06&sig=yDEmbLc%2B7kuqWxFqtxciioFBCC%2BV3q9sTwI24u2POm8%3D&ac=oaivgprodscus2');background-size:cover;background-position:center 30%}
-  .hero-ov1{position:absolute;inset:0;background:linear-gradient(160deg,rgba(25,11,4,.82) 0%,rgba(25,11,4,.55) 55%,rgba(25,11,4,.25) 100%)}
-  .hero-ov2{position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(to top,rgba(12,5,2,.88),transparent)}
-  .hero-tile{position:absolute;top:60px;right:60px;width:220px;height:220px;background-image:repeating-linear-gradient(45deg,rgba(200,113,74,.07) 0,rgba(200,113,74,.07) 1px,transparent 1px,transparent 12px),repeating-linear-gradient(-45deg,rgba(200,113,74,.07) 0,rgba(200,113,74,.07) 1px,transparent 1px,transparent 12px);border:1px solid rgba(200,113,74,.15);border-radius:4px;pointer-events:none}
-  @media(max-width:768px){.hero-tile{display:none}}
-  .hero-content{position:relative;z-index:10;padding:130px 0 0}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(200,113,74,.18);backdrop-filter:blur(8px);border:1px solid rgba(200,113,74,.3);color:rgba(255,255,255,.9);padding:8px 18px;border-radius:99px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px}
-  .hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--clay-lt);animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
-  .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,7vw,92px);font-weight:600;color:#fff;line-height:1.0;letter-spacing:-.02em;margin-bottom:20px}
-  .hero-h1 em{font-style:italic;color:rgba(232,149,109,.9)}
-  .hero-h1 .sub-line{display:block;font-weight:400;font-size:.68em;color:rgba(255,255,255,.65);letter-spacing:.02em;margin-top:6px}
-  .hero-sub{color:rgba(255,255,255,.65);font-size:16.5px;line-height:1.75;max-width:520px;margin-bottom:32px}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-  /* ── SINGLE LINE SEARCH ── */
-  /* ── single-line search bar ── */
-  .search-wrap{
-    background:rgba(253,248,243,.97);backdrop-filter:blur(12px);
-    border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.32);
-    display:flex;align-items:stretch;
-    max-width:1020px;margin-bottom:10px;
-    overflow:hidden;flex-wrap:nowrap;
-    height:62px;
-  }
-  .sf{
-    display:flex;flex-direction:column;justify-content:center;
-    padding:0 16px;border-right:1px solid var(--border);
-    min-width:0;flex-shrink:1;height:100%;
-  }
-  .sf-label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--clay);margin-bottom:2px;white-space:nowrap}
-  .sf select{
-    border:none;outline:none;background:transparent;
-    font-family:'Jost',sans-serif;font-size:13px;color:var(--earth);font-weight:500;
-    appearance:none;-webkit-appearance:none;cursor:pointer;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;
-  }
-  .sf-look{flex:0 0 88px}
-  .sf-cat{flex:0 0 188px}
-  .sf-loc{flex:1 1 150px}
-  .sf-min,.sf-max{flex:0 0 110px}
-  .search-go{
-    background:var(--clay);color:#fff;border:none;cursor:pointer;
-    padding:0 26px;font-family:'Jost',sans-serif;font-size:14px;font-weight:700;
-    display:flex;align-items:center;gap:8px;transition:all .2s;
-    white-space:nowrap;flex:0 0 auto;box-shadow:-4px 0 20px rgba(200,113,74,.25);
-  }
-  .search-go:hover{background:var(--clay-dk)}
-  .surround-row{display:flex;align-items:center;gap:7px;margin-bottom:20px}
-  .surround-row input{accent-color:var(--clay);cursor:pointer;width:13px;height:13px}
-  .surround-row label{font-size:12px;color:rgba(255,255,255,.55);cursor:pointer}
-  .search-count{font-size:12.5px;color:rgba(255,255,255,.48);position:relative;z-index:10;padding-bottom:24px}
-  .search-count b{color:rgba(255,255,255,.78)}
-  @media(max-width:860px){
-    .search-wrap{flex-wrap:wrap;height:auto}
-    .sf{flex:1 1 45%;border-right:none;border-bottom:1px solid var(--border);height:52px;padding:0 14px}
-    .sf-look{flex:1 1 45%}
-    .search-go{flex:1 1 100%;justify-content:center;height:48px;padding:0}
-  }
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:20px 0;transition:all .35s ease}
+    #nav.solid{background:rgba(10,37,64,.94);backdrop-filter:blur(14px);padding:13px 0;box-shadow:0 1px 20px rgba(0,0,0,.12)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-mark{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#0096C7,#48CAE4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{font-size:13.5px;font-weight:500;color:rgba(255,255,255,.78);transition:color .2s}
+    .nav-links a:hover{color:#fff}
+    .nav-cta{display:flex;align-items:center;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;border:none;transition:all .25s}
+    .btn-outline{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.28)}
+    .btn-outline:hover{background:rgba(255,255,255,.18)}
+    .btn-clay{background:var(--clay);color:#fff;box-shadow:0 3px 12px rgba(0,150,199,.3)}
+    .btn-clay:hover{background:#0082AD;box-shadow:0 5px 18px rgba(0,150,199,.4);transform:translateY(-1px)}
+    @media(max-width:768px){.nav-links{display:none}.nav-cta .btn-outline{display:none}}
 
+    /* HERO */
+    #hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1800&auto=format&fit=crop&q=85');background-size:cover;background-position:center 40%}
+    .hero-ov1{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,37,64,.75) 0%,rgba(0,96,150,.45) 55%,rgba(0,0,0,.1) 100%)}
+    .hero-ov2{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(10,37,64,.85) 0%,rgba(10,37,64,.4) 50%,transparent 100%)}
+    .hero-tile{position:absolute;top:60px;right:60px;width:200px;height:200px;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 14px);border:1px solid rgba(255,255,255,.1);border-radius:4px;pointer-events:none}
+    @media(max-width:768px){.hero-tile{display:none}}
+    .hero-content{position:relative;z-index:10;padding:130px 0 0}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.92);padding:8px 18px;border-radius:99px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+    .hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+    .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6.5vw,86px);font-weight:600;color:#fff;line-height:1.02;letter-spacing:-.02em;margin-bottom:16px}
+    .hero-h1 em{font-style:italic;color:#90E0EF}
+    .hero-h1 .sub-line{display:block;font-weight:400;font-size:.64em;color:rgba(255,255,255,.55);letter-spacing:.04em;margin-top:8px;font-family:'Inter',sans-serif}
+    .hero-sub{color:rgba(255,255,255,.68);font-size:16px;line-height:1.78;max-width:500px;margin-bottom:28px}
+    .hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+    .hero-btns .btn-clay{font-size:14.5px;padding:13px 28px}
+    .hero-btns .btn-outline{font-size:14.5px;padding:13px 28px}
 
-  /* Stats */
-  .hero-stats{position:relative;z-index:10;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.08)}
-  .hsi{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 0}
-  @media(max-width:560px){.hsi{grid-template-columns:repeat(2,1fr);gap:14px;padding:18px 0}}
-  .hs{text-align:center}
-  .hs-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#fff}
-  .hs-l{font-size:11px;color:rgba(255,255,255,.48);margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
+    /* Search bar */
+    .hero-search{position:relative;z-index:10;background:rgba(10,37,64,.7);backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.1);padding:22px 0 28px}
+    .hs-tabs{display:flex;gap:4px;margin-bottom:16px}
+    .hs-tab{padding:7px 18px;border-radius:6px 6px 0 0;font-size:13px;font-weight:600;cursor:pointer;border:none;background:rgba(255,255,255,.07);color:rgba(255,255,255,.55);transition:all .2s}
+    .hs-tab.on{background:var(--clay);color:#fff}
+    .hs-form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;align-items:end}
+    @media(max-width:900px){.hs-form{grid-template-columns:1fr 1fr}.hs-form .btn-search{grid-column:span 2}}
+    @media(max-width:560px){.hs-form{grid-template-columns:1fr}}
+    .hs-field{display:flex;flex-direction:column;gap:5px}
+    .hs-field label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.45)}
+    .hs-field select,.hs-field input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:11px 14px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border .2s}
+    .hs-field select:focus,.hs-field input:focus{border-color:var(--clay-lt)}
+    .hs-field select option{background:#0A2540;color:#fff}
+    .btn-search{padding:12px 26px;background:var(--clay);color:#fff;border:none;border-radius:8px;font-size:14.5px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 3px 12px rgba(0,150,199,.35);transition:all .25s}
+    .btn-search:hover{background:#0082AD;transform:translateY(-1px)}
 
-  /* ── QUICK TYPES ── */
-  .qtypes{padding:30px 0;background:#fff;border-bottom:1px solid var(--border)}
-  .qti{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
-  .qti::-webkit-scrollbar{display:none}
-  .qtype{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 20px;border-radius:14px;border:1.5px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;flex-shrink:0;min-width:88px}
-  .qtype:hover,.qtype.on{border-color:var(--clay);background:var(--sand)}
-  .qtype-icon{width:38px;height:38px;border-radius:9px;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s}
-  .qtype:hover .qtype-icon,.qtype.on .qtype-icon{background:rgba(200,113,74,.15)}
-  .qtype-name{font-size:11px;font-weight:600;color:var(--earth-lt);text-align:center;line-height:1.3}
-  .qtype:hover .qtype-name,.qtype.on .qtype-name{color:var(--clay)}
+    /* Stats */
+    .hsi{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border-top:1px solid rgba(255,255,255,.08)}
+    @media(max-width:600px){.hsi{grid-template-columns:repeat(2,1fr)}}
+    .hs{padding:18px 0;text-align:center}
+    .hs-v{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#90E0EF}
+    .hs-l{font-size:12px;color:rgba(255,255,255,.45);margin-top:2px}
 
-  /* ── PROPERTIES ── */
-  .sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:32px}
-  .ftabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
-  .ftab{padding:9px 20px;border-radius:99px;font-size:13px;font-weight:600;border:1.5px solid var(--border);background:#fff;color:var(--earth-lt);cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s;white-space:nowrap}
-  .ftab.on,.ftab:hover{background:var(--clay);color:#fff;border-color:var(--clay)}
-  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  @media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
-  .pc{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--border);transition:all .3s;cursor:pointer}
-  .pc:hover{box-shadow:var(--shadow-lg);transform:translateY(-5px);border-color:transparent}
-  .pc-img{position:relative;height:208px;overflow:hidden}
-  .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .pc:hover .pc-img img{transform:scale(1.06)}
-  .pc-tags{position:absolute;top:12px;left:12px;display:flex;gap:6px}
-  .pc-type-pill{position:absolute;bottom:12px;left:12px;background:rgba(253,248,243,.92);backdrop-filter:blur(4px);font-size:11px;font-weight:700;color:var(--earth);padding:5px 12px;border-radius:99px}
-  .pc-heart{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.88);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-  .pc-heart:hover{background:#fff;transform:scale(1.1)}
-  .pc-body{padding:18px 20px 20px}
-  .pc-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--clay);line-height:1}
-  .pc-pr{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
-  .pc-title{font-size:14px;font-weight:600;color:var(--earth);margin-bottom:7px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .pc-loc{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--earth-lt);margin-bottom:14px}
-  .pc-specs{display:flex;align-items:center;gap:14px;padding-top:12px;border-top:1px solid var(--sand-dk);font-size:12px;color:var(--earth-lt)}
-  .pc-verified{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--sage)}
-  .badge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:99px;font-size:11px;font-weight:600}
-  .bc{background:rgba(200,113,74,.12);color:var(--clay-dk)}
-  .bs{background:rgba(122,140,110,.12);color:var(--sage)}
-  .be{background:rgba(61,43,31,.08);color:var(--earth)}
+    /* QUICK TYPE NAV */
+    .qtypes{background:#fff;border-bottom:1px solid #E2EEF8;padding:4px 0;overflow-x:auto;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+    .qti{display:flex;gap:4px;padding:4px 0;min-width:max-content}
+    .qtype{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 18px;border-radius:10px;cursor:pointer;transition:all .2s;border:1.5px solid transparent}
+    .qtype:hover{background:#F0F8FF;border-color:#BEE3F8}
+    .qtype.on{background:var(--clay);border-color:var(--clay)}
+    .qtype-icon{font-size:19px}
+    .qtype-name{font-size:12px;font-weight:600;color:var(--text);white-space:nowrap}
+    .qtype.on .qtype-name{color:#fff}
 
-  /* ── LIFESTYLE ── */
-  .lifestyle{padding:70px 0;background:var(--sand);position:relative;overflow:hidden}
-  .lifestyle::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,var(--clay) 0,var(--clay) 20px,transparent 20px,transparent 30px)}
-  .ls-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  @media(max-width:768px){.ls-inner{grid-template-columns:1fr}}
-  .ls-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
-  .ls-img{border-radius:14px;overflow:hidden}
-  .ls-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .ls-img:hover img{transform:scale(1.04)}
-  .ls-img:first-child{grid-row:span 2;height:340px}
-  .ls-img:not(:first-child){height:160px}
-  .ls-badge{position:absolute;bottom:-16px;left:16px;background:var(--clay);color:#fff;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;padding:10px 18px;border-radius:12px;box-shadow:0 6px 20px rgba(200,113,74,.4);white-space:nowrap}
-  .ls-pts{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:16px}
-  .ls-pt{display:flex;gap:14px;align-items:flex-start}
-  .ls-pt-ico{width:40px;height:40px;border-radius:10px;background:rgba(200,113,74,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-top:2px}
-  .ls-pt h4{font-size:14.5px;font-weight:700;color:var(--earth);margin-bottom:3px}
-  .ls-pt p{font-size:13px;color:var(--earth-lt);line-height:1.6}
+    /* SECTIONS */
+    .section{padding:60px 0}
+    .sec-hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+    .tag{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--clay);margin-bottom:10px}
+    .tag::before{content:'';width:20px;height:2px;background:var(--clay-lt);border-radius:2px}
+    .h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:600;color:var(--dark);line-height:1.12;letter-spacing:-.02em}
+    .h2 em{font-style:italic;color:var(--clay)}
+    .sub{font-size:15px;color:var(--muted);line-height:1.72;max-width:520px}
 
-  /* ── WHY ── */
-  .why{padding:80px 0;background:var(--earth);position:relative;overflow:hidden}
-  .why::after{content:'GOA';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:220px;font-weight:700;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;letter-spacing:-.05em}
-  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
-  @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
-  .wcard{padding:28px 22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:all .3s}
-  .wcard:hover{background:rgba(255,255,255,.09);transform:translateY(-4px);border-color:rgba(200,113,74,.3)}
-  .wcard-ico{font-size:30px;margin-bottom:16px}
-  .wcard-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--clay-lt);margin-bottom:4px}
-  .wcard-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
-  .wcard-desc{font-size:13px;color:rgba(255,255,255,.48);line-height:1.7}
+    /* BADGES */
+    .badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+    .bc{background:#E0F4FB;color:#0077A8}
+    .be{background:#EBF4FF;color:#1A5276}
+    .bs{background:#E8F8FC;color:#0096C7}
 
-  /* ── SERVICES ── */
-  .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-  @media(max-width:900px){.sgrid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:480px){.sgrid{grid-template-columns:1fr}}
-  .scard{padding:26px 20px;border-radius:16px;border:1.5px solid var(--border);background:#fff;transition:all .3s;cursor:pointer}
-  .scard:hover{border-color:var(--clay-lt);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
-  .scard-ico{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;transition:transform .3s}
-  .scard:hover .scard-ico{transform:scale(1.1)}
-  .scard-title{font-size:15px;font-weight:700;color:var(--earth);margin-bottom:7px;transition:color .2s}
-  .scard:hover .scard-title{color:var(--clay)}
-  .scard-desc{font-size:13px;color:var(--earth-lt);line-height:1.65;margin-bottom:14px}
-  .scard-link{font-size:13px;font-weight:600;color:var(--clay);display:flex;align-items:center;gap:4px}
-  .sarr{transition:transform .2s}
-  .scard:hover .sarr{transform:translateX(4px)}
+    /* PROPERTY CARDS */
+    .ftabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+    .ftab{padding:7px 18px;border-radius:99px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid #D4E9F5;background:transparent;color:var(--muted);transition:all .2s}
+    .ftab:hover{border-color:var(--clay);color:var(--clay)}
+    .ftab.on{background:var(--clay);color:#fff;border-color:var(--clay)}
+    .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+    .pc{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid #EAF3FA;cursor:pointer;transition:all .3s}
+    .pc:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,96,150,.12)}
+    .pc-img{position:relative;height:200px;overflow:hidden}
+    .pc-img img{transition:transform .6s ease}
+    .pc:hover .pc-img img{transform:scale(1.05)}
+    .pc-tags{position:absolute;top:12px;left:12px;display:flex;gap:6px}
+    .pc-type-pill{position:absolute;bottom:12px;left:12px;background:rgba(10,37,64,.72);backdrop-filter:blur(6px);color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:99px;letter-spacing:.05em}
+    .pc-heart{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.92);border:none;border-radius:50%;width:34px;height:34px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    .pc-heart:hover{background:#fff;transform:scale(1.1)}
+    .pc-body{padding:14px 16px 16px}
+    .pc-pr{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .pc-price{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--dark)}
+    .pc-title{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px;line-height:1.4}
+    .pc-loc{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--muted);margin-bottom:10px}
+    .pc-specs{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);flex-wrap:wrap;border-top:1px solid #EEF5FA;padding-top:10px}
+    .pc-verified{color:var(--clay);font-weight:700;margin-left:auto}
 
-  /* ── BLOG ── */
-  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-  @media(max-width:900px){.bgrid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.bgrid{grid-template-columns:1fr}}
-  .bcard{background:#fff;border-radius:16px;border:1px solid var(--border);overflow:hidden;transition:all .3s;cursor:pointer}
-  .bcard:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:transparent}
-  .bcard-img{height:188px;overflow:hidden}
-  .bcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .bcard:hover .bcard-img img{transform:scale(1.05)}
-  .bcard-body{padding:20px}
-  .bcard-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--earth);line-height:1.35;margin:10px 0 8px;transition:color .2s}
-  .bcard:hover .bcard-title{color:var(--clay)}
-  .bcard-exc{font-size:13px;color:var(--earth-lt);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px}
-  .bcard-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:#9a8a80;padding-top:12px;border-top:1px solid var(--sand-dk)}
+    /* LIFESTYLE */
+    .lifestyle{padding:60px 0;background:#fff}
+    .ls-inner{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+    @media(max-width:860px){.ls-inner{grid-template-columns:1fr}}
+    .ls-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
+    .ls-img{border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+    .ls-badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:var(--clay);color:#fff;padding:9px 20px;border-radius:99px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 4px 14px rgba(0,150,199,.3)}
+    .ls-pts{display:flex;flex-direction:column;gap:16px;margin-top:18px}
+    .ls-pt{display:flex;align-items:flex-start;gap:14px}
+    .ls-pt-ico{width:42px;height:42px;border-radius:10px;background:#EBF6FB;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+    .ls-pt h4{font-size:14.5px;font-weight:700;color:var(--dark);margin-bottom:3px}
+    .ls-pt p{font-size:13px;color:var(--muted);line-height:1.65}
 
-  /* ── CTA ── */
-  .cta-wrap{padding:80px 0;background:var(--sand)}
-  .cta-box{background:var(--clay);border-radius:24px;padding:60px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
-  @media(max-width:768px){.cta-box{grid-template-columns:1fr;padding:36px 26px}}
-  .cta-pat{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 18px),repeating-linear-gradient(-45deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 18px)}
-  .cta-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.9);padding:7px 16px;border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
-  .cta-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:600;color:#fff;margin-bottom:12px;line-height:1.15}
-  .cta-sub{color:rgba(255,255,255,.72);font-size:15px;line-height:1.75;margin-bottom:26px}
-  .cta-pts{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:30px}
-  .cta-pt{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.9)}
-  .cta-chk{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
-  .cta-btns{display:flex;gap:14px;flex-wrap:wrap}
-  .btn-cw{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--clay);font-family:'Jost',sans-serif;font-weight:700;font-size:14px;padding:14px 30px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 20px rgba(0,0,0,.15)}
-  .btn-cw:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
-  .btn-cg{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:'Jost',sans-serif;font-weight:600;font-size:14px;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;transition:all .2s}
-  .btn-cg:hover{background:rgba(255,255,255,.12)}
-  .cta-card{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:26px;min-width:230px}
-  @media(max-width:768px){.cta-card{display:none}}
-  .cta-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fff;margin-bottom:18px}
-  .cs{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:12px;font-size:13px}
-  .cs:last-child{border:none;margin:0;padding:0}
-  .csl{color:rgba(255,255,255,.62)}
-  .csv{color:#fff;font-weight:700}
+    /* WHY */
+    .why{padding:60px 0;background:linear-gradient(150deg,#0A2540 0%,#0353A4 55%,#0096C7 100%);text-align:center}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+    @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
+    .wcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:24px 18px;text-align:center;transition:all .3s}
+    .wcard:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
+    .wcard-ico{font-size:28px;margin-bottom:10px}
+    .wcard-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:#90E0EF;margin-bottom:4px}
+    .wcard-title{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:8px}
+    .wcard-desc{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.65}
 
-  /* ── FOOTER ── */
-  footer{background:#1a0b04;color:rgba(255,255,255,.55)}
-  .footer-main{padding:56px 0 36px}
-  .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px}
-  @media(max-width:900px){.fg{grid-template-columns:1fr 1fr;gap:28px}}
-  @media(max-width:480px){.fg{grid-template-columns:1fr}}
-  .fb p{font-size:13px;line-height:1.8;margin:14px 0 20px}
-  .sr{display:flex;gap:8px}
-  .sb{width:35px;height:35px;border-radius:9px;background:rgba(255,255,255,.07);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.55);transition:all .2s}
-  .sb:hover{background:var(--clay);color:#fff}
-  .fh{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.9);margin-bottom:16px}
-  .fl{list-style:none;display:flex;flex-direction:column;gap:8px}
-  .fl a{font-size:13px;color:rgba(255,255,255,.48);transition:color .2s}
-  .fl a:hover{color:var(--clay-lt)}
-  .fc{display:flex;flex-direction:column;gap:12px}
-  .fci{display:flex;gap:10px;align-items:flex-start;font-size:13px}
-  .fci-i{color:var(--clay-lt);flex-shrink:0;margin-top:1px}
-  .fbot{border-top:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px}
-  .fleg{display:flex;gap:18px}
-  .fleg a{color:rgba(255,255,255,.32);transition:color .2s}
-  .fleg a:hover{color:var(--clay-lt)}
+    /* SERVICES */
+    .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+    @media(max-width:900px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.sgrid{grid-template-columns:1fr}}
+    .scard{background:#fff;border-radius:14px;padding:22px 18px;border:1px solid #E8F2F9;transition:all .3s;cursor:pointer}
+    .scard:hover{box-shadow:0 8px 26px rgba(0,96,150,.1);transform:translateY(-3px);border-color:#C5DFF0}
+    .scard-ico{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:12px}
+    .scard-title{font-size:14.5px;font-weight:700;color:var(--dark);margin-bottom:6px}
+    .scard-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+    .scard-link{font-size:13px;font-weight:700;color:var(--clay);display:flex;align-items:center;gap:4px}
+    .sarr{transition:transform .2s}
+    .scard:hover .sarr{transform:translateX(4px)}
 
-  /* ── ANIM ── */
-  @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-  .fu{animation:fadeUp .7s ease both}
-  .fu1{animation:fadeUp .7s .1s ease both}
-  .fu2{animation:fadeUp .7s .2s ease both}
-  .fu3{animation:fadeUp .7s .3s ease both}
+    /* BLOG */
+    .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:900px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.bgrid{grid-template-columns:1fr}}
+    .bcard{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #EAF3FA;box-shadow:0 2px 10px rgba(0,0,0,.04);transition:all .3s;cursor:pointer}
+    .bcard:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,96,150,.1)}
+    .bcard-img{height:188px;overflow:hidden}
+    .bcard-img img{transition:transform .6s ease}
+    .bcard:hover .bcard-img img{transform:scale(1.05)}
+    .bcard-body{padding:16px 18px 18px}
+    .bcard-title{font-size:14px;font-weight:700;color:var(--dark);margin:8px 0 6px;line-height:1.44}
+    .bcard-exc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+    .bcard-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:#8AAFC8;flex-wrap:wrap}
+
+    /* CTA */
+    .cta-wrap{padding:0 0 52px}
+    .cta-box{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(130deg,#0353A4 0%,#0096C7 55%,#48CAE4 100%);padding:40px 44px;display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:center}
+    @media(max-width:900px){.cta-box{grid-template-columns:1fr;padding:32px 24px}}
+    .cta-pat{position:absolute;inset:0;background-image:radial-gradient(circle at 80% 20%,rgba(255,255,255,.08) 0%,transparent 50%),radial-gradient(circle at 20% 80%,rgba(255,255,255,.05) 0%,transparent 40%);pointer-events:none}
+    .cta-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#fff;padding:6px 14px;border-radius:99px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+    .cta-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,40px);font-weight:600;color:#fff;line-height:1.12;margin-bottom:12px}
+    .cta-sub{color:rgba(255,255,255,.78);font-size:14.5px;line-height:1.7;margin-bottom:20px}
+    .cta-pts{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+    .cta-pt{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500;color:#fff}
+    .cta-chk{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+    .cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+    .btn-cw{padding:11px 22px;background:#fff;color:#0353A4;font-size:13.5px;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:all .25s}
+    .btn-cw:hover{background:#EBF6FB;transform:translateY(-1px)}
+    .btn-cg{padding:11px 22px;background:rgba(255,255,255,.12);color:#fff;font-size:13.5px;font-weight:600;border:1.5px solid rgba(255,255,255,.4);border-radius:8px;cursor:pointer;transition:all .25s}
+    .btn-cg:hover{background:rgba(255,255,255,.22)}
+    .cta-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);border-radius:14px;padding:24px}
+    .cta-card h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:16px}
+    .cs{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .cs:last-child{border-bottom:none}
+    .csl{font-size:12.5px;color:rgba(255,255,255,.65)}
+    .csv{font-size:14px;font-weight:700;color:#CAF0F8}
+
+    /* FOOTER */
+    footer{background:#0A2540}
+    .footer-main{padding:44px 0 28px}
+    .fg{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.2fr;gap:40px}
+    @media(max-width:900px){.fg{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.fg{grid-template-columns:1fr}}
+    .fb p{color:rgba(255,255,255,.4);font-size:13px;line-height:1.75;margin-top:12px;margin-bottom:18px}
+    .fh{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#48CAE4;margin-bottom:14px}
+    .fl{display:flex;flex-direction:column;gap:9px}
+    .fl a{font-size:13px;color:rgba(255,255,255,.42);transition:color .2s}
+    .fl a:hover{color:#fff}
+    .fc{display:flex;flex-direction:column;gap:12px}
+    .fci{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(255,255,255,.42)}
+    .fci a{color:rgba(255,255,255,.42);transition:color .2s}
+    .fci a:hover{color:#fff}
+    .fci-i{margin-top:1px;flex-shrink:0}
+    .sr{display:flex;gap:8px}
+    .sb{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55);font-size:13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+    .sb:hover{background:var(--clay);border-color:var(--clay);color:#fff}
+    .fbot{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap;gap:12px;font-size:12.5px;color:rgba(255,255,255,.28)}
+    .fleg{display:flex;gap:18px;flex-wrap:wrap}
+    .fleg a{font-size:12.5px;color:rgba(255,255,255,.34);transition:color .2s}
+    .fleg a:hover{color:#fff}
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="/" class="logo">
+      <div class="logo">
         <div class="logo-mark">E</div>
-        <span class="logo-text">EasyLiving <span>Goa</span></span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Buy Property</a></li>
-        <li><a href="#">Rent Property</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="nav-ctas">
-        <button class="btn-nav">Login / Signup</button>
-        <button class="btn-nav-post">+ Post Property</button>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff">EasyLiving <span style="color:#48CAE4">Goa</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Buy</a>
+        <a href="#">Rent</a>
+        <a href="#">Lease</a>
+        <a href="#">New Projects</a>
+        <a href="#">Locations</a>
+        <a href="#blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-outline" style="font-size:13px;padding:9px 18px">Post Property</a>
+        <a href="#" class="btn btn-clay" style="font-size:13px;padding:9px 18px">Talk to Us</a>
       </div>
     </div>
   </div>
@@ -317,85 +268,79 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div><div class="hero-ov1"></div><div class="hero-ov2"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-ov1"></div>
+  <div class="hero-ov2"></div>
   <div class="hero-tile"></div>
-
   <div class="hero-content">
     <div class="container">
-
-      <div class="hero-eyebrow fu">
-        <span></span>Goa's Trusted Property Specialists
-      </div>
-
-      <h1 class="hero-h1 fu1">
-        Your Dream Home<br>in <em>Paradise</em>
-        <span class="sub-line">Villas · Apartments · Plots · Portuguese Houses</span>
+      <div class="hero-eyebrow"><span></span>Goa's #1 Property Portal Since 2009</div>
+      <h1 class="hero-h1">
+        Find Your Dream<br><em>Property in Goa</em>
+        <span class="sub-line">Villas &nbsp;·&nbsp; Apartments &nbsp;·&nbsp; Plots &nbsp;·&nbsp; Portuguese Houses</span>
       </h1>
-
-      <p class="hero-sub fu2">
-        Over 1,333 verified listings across every corner of Goa — from sun-drenched Calangute to the lush hills of Assagao and the heritage lanes of Fontainhas.
-      </p>
-
-      <!-- SINGLE LINE SEARCH BAR -->
-      <div class="search-wrap fu3">
-        <div class="sf sf-look">
-          <div class="sf-label">Looking To</div>
-          <select><option>Sale</option><option>Rent</option></select>
-        </div>
-        <div class="sf sf-cat">
-          <div class="sf-label">Category</div>
-          <select>
-            <option value="">— Any Category —</option>
-            <option>Apartments &amp; Penthouses</option>
-            <option>Agriculture / Farm / Orchard Land</option>
-            <option>Approved Projects</option>
-            <option>Beach / River Side Properties</option>
-            <option>Beauty Parlour</option>
-            <option>Boutique Resort</option>
-            <option>Bungalows &amp; Villas</option>
-            <option>Hotel</option>
-            <option>Industrial Sheds / Plots &amp; Godown</option>
-            <option>Office</option>
-            <option>Plots</option>
-            <option>Portuguese Houses / Goan House</option>
-            <option>Resort and Plots for Resorts</option>
-            <option>Resort for Lease / Rent</option>
-            <option>Restaurant</option>
-            <option>Row House &amp; Duplex</option>
-            <option>Shop &amp; Showrooms</option>
-            <option>Villa</option>
-          </select>
-        </div>
-        <div class="sf sf-loc">
-          <div class="sf-label">📍 Location</div>
-          <select>
-            <option value="">— Any Location —</option>
-            <option>Aldona</option><option>Altinho</option><option>Anjuna</option><option>Aquem</option><option>Arpora</option><option>Ashwem</option><option>Assagao</option><option>Badem</option><option>Baga</option><option>Bainguinim</option><option>Bambolim</option><option>Banasterim</option><option>Bastora</option><option>Benaulim</option><option>Betalbatim</option><option>Betim</option><option>Betul</option><option>Bhatlem</option><option>Bicholim</option><option>Bogmalo</option><option>Calangute</option><option>Campal</option><option>Canacona</option><option>Candolim</option><option>Caranzalem</option><option>Carmona</option><option>Cavelossim</option><option>Chapora</option><option>Chicalim</option><option>Chimbel</option><option>Chorao</option><option>Colva</option><option>Colvale</option><option>Corlim</option><option>Cortalim</option><option>Curca</option><option>Curchorem</option><option>Dabolim</option><option>Diwar</option><option>Dona Paula</option><option>Duler</option><option>Goa Velha</option><option>Gogol</option><option>Guirim</option><option>Kadamba Plateau</option><option>Kerim</option><option>Loutolim</option><option>Mandrem</option><option>Mapusa</option><option>Marcela</option><option>Margao</option><option>Merces</option><option>Miramar</option><option>Moira</option><option>Mopa</option><option>Morgim</option><option>Morjim</option><option>Nachinola</option><option>Nagoa</option><option>Navelim</option><option>Nerul</option><option>North Goa</option><option>Old Goa</option><option>Oxel</option><option>Panjim</option><option>Parra</option><option>Pernem</option><option>Pilar</option><option>Pilerne</option><option>Pomburpa</option><option>Ponda</option><option>Porvorim</option><option>Porvorim - Salvador do Mundo</option><option>Porvorim - Succour</option><option>Raibander</option><option>Reis Magos</option><option>Saligao</option><option>Sangolda</option><option>Salvador do Mundo</option><option>Sernabhatim</option><option>Siolim</option><option>South Goa</option><option>St. Cruz</option><option>St. Inez</option><option>Succour</option><option>Taleigao</option><option>Tambdi Surla</option><option>Tivim</option><option>Tonca</option><option>Uccassaim</option><option>Vagator</option><option>Valpoi</option><option>Varca</option><option>Vasco</option><option>Verem</option><option>Verla</option><option>Verna</option>
-          </select>
-        </div>
-        <div class="sf sf-min">
-          <div class="sf-label">Min Price</div>
-          <select><option value="">No Min</option><option>₹5 Lakhs</option><option>₹10 Lakhs</option><option>₹20 Lakhs</option><option>₹30 Lakhs</option><option>₹50 Lakhs</option><option>₹75 Lakhs</option><option>₹1 Crore</option><option>₹1.5 Crore</option><option>₹2 Crore</option><option>₹3 Crore</option><option>₹5 Crore</option><option>₹10 Crore+</option></select>
-        </div>
-        <div class="sf sf-max">
-          <div class="sf-label">Max Price</div>
-          <select><option value="">No Max</option><option>₹10 Lakhs</option><option>₹20 Lakhs</option><option>₹30 Lakhs</option><option>₹50 Lakhs</option><option>₹75 Lakhs</option><option>₹1 Crore</option><option>₹1.5 Crore</option><option>₹2 Crore</option><option>₹3 Crore</option><option>₹5 Crore</option><option>₹10 Crore+</option></select>
-        </div>
-        <button class="search-go">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Search
-        </button>
+      <p class="hero-sub">From sea-facing villas in Candolim to heritage homes in Fontainhas — browse 1,333+ verified properties across 90+ Goa locations.</p>
+      <div class="hero-btns">
+        <a href="#properties" class="btn btn-clay">Explore Properties →</a>
+        <a href="#" class="btn btn-outline">Post Your Property</a>
       </div>
-
-      <div class="surround-row">
-        <input type="checkbox" id="surr"/>
-        <label for="surr">Include surrounding areas</label>
-      </div>
-      <div class="search-count fu3"><b>1,333+</b> properties listed across Goa</div>
     </div>
   </div>
 
-  <div class="hero-stats">
+  <!-- Search Bar -->
+  <div class="hero-search">
+    <div class="container">
+      <div class="hs-tabs">
+        <button class="hs-tab on">Buy</button>
+        <button class="hs-tab">Rent</button>
+        <button class="hs-tab">Lease</button>
+        <button class="hs-tab">New Projects</button>
+      </div>
+      <div class="hs-form">
+        <div class="hs-field">
+          <label>Location</label>
+          <select>
+            <option>All Goa</option>
+            <option>North Goa</option>
+            <option>South Goa</option>
+            <option>Candolim</option>
+            <option>Calangute</option>
+            <option>Panjim</option>
+            <option>Assagao</option>
+            <option>Fontainhas</option>
+            <option>Baga</option>
+          </select>
+        </div>
+        <div class="hs-field">
+          <label>Property Type</label>
+          <select>
+            <option>All Types</option>
+            <option>Villa / House</option>
+            <option>Apartment</option>
+            <option>Plot / Land</option>
+            <option>Portuguese House</option>
+            <option>Commercial</option>
+            <option>Resort / Hotel</option>
+          </select>
+        </div>
+        <div class="hs-field">
+          <label>Budget</label>
+          <select>
+            <option>Any Budget</option>
+            <option>Under ₹50 Lakhs</option>
+            <option>₹50L – ₹1 Cr</option>
+            <option>₹1 Cr – ₹3 Cr</option>
+            <option>₹3 Cr – ₹5 Cr</option>
+            <option>Above ₹5 Cr</option>
+          </select>
+        </div>
+        <button class="btn-search">🔍 Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div style="background:rgba(10,37,64,.82);backdrop-filter:blur(10px)">
     <div class="container">
       <div class="hsi">
         <div class="hs"><div class="hs-v">1,333+</div><div class="hs-l">Properties Listed</div></div>
@@ -431,7 +376,7 @@
         <h2 class="h2">Featured Properties <em>in Goa</em></h2>
         <p class="sub">Curated villas, plots &amp; homes from verified owners and agents across North &amp; South Goa.</p>
       </div>
-      <a href="#" class="btn btn-outline">View All →</a>
+      <a href="#" class="btn" style="color:var(--clay);border:1.5px solid #C5DFF0;background:#fff;font-size:13px">View All →</a>
     </div>
     <div class="ftabs">
       <button class="ftab on" onclick="fTab(this,'All')">All</button>
@@ -532,8 +477,8 @@
       </div>
 
     </div>
-    <div style="text-align:center;margin-top:44px">
-      <a href="#" class="btn btn-clay" style="font-size:15px;padding:15px 40px">Explore All Goa Properties <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div style="text-align:center;margin-top:32px">
+      <a href="#" class="btn btn-clay" style="font-size:14px;padding:13px 36px">Explore All Goa Properties <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:4px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
 </section>
@@ -543,15 +488,15 @@
   <div class="container">
     <div class="ls-inner">
       <div class="ls-imgs">
-        <div class="ls-img" style="grid-row:span 2;height:340px"><img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=500&auto=format&fit=crop&q=80" alt="Goa beach" style="height:100%"/></div>
-        <div class="ls-img" style="height:160px"><img src="https://images.unsplash.com/photo-1590073844006-33379778ae09?w=400&auto=format&fit=crop&q=80" alt="Goa villa"/></div>
-        <div class="ls-img" style="height:160px"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&auto=format&fit=crop&q=80" alt="Goa pool"/></div>
+        <div class="ls-img" style="grid-row:span 2;height:320px"><img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=500&auto=format&fit=crop&q=80" alt="Goa beach" style="height:100%"/></div>
+        <div class="ls-img" style="height:152px"><img src="https://images.unsplash.com/photo-1590073844006-33379778ae09?w=400&auto=format&fit=crop&q=80" alt="Goa villa"/></div>
+        <div class="ls-img" style="height:152px"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&auto=format&fit=crop&q=80" alt="Goa pool"/></div>
         <div class="ls-badge">🌴 Live the Goa Dream</div>
       </div>
       <div>
         <div class="tag">Why Invest in Goa</div>
         <h2 class="h2">More Than a Property —<br>It's a <em>Lifestyle</em></h2>
-        <p class="sub">Goa isn't just a destination — it's a way of life. Azure beaches, lush paddy fields, Portuguese heritage and a pace that restores the soul.</p>
+        <p class="sub" style="margin-top:8px">Goa isn't just a destination — it's a way of life. Azure beaches, lush paddy fields, Portuguese heritage and a pace that restores the soul.</p>
         <ul class="ls-pts">
           <li class="ls-pt">
             <div class="ls-pt-ico">🏖️</div>
@@ -566,7 +511,7 @@
             <div><h4>Strong Investment Returns</h4><p>Goa property values have grown 12–18% YoY in prime belts. Holiday rental yields of 6–9% make it a smart buy.</p></div>
           </li>
         </ul>
-        <div style="margin-top:28px">
+        <div style="margin-top:22px">
           <a href="#" class="btn btn-clay">Explore Goa Locations →</a>
         </div>
       </div>
@@ -577,9 +522,9 @@
 <!-- WHY CHOOSE US -->
 <section class="why">
   <div class="container">
-    <div class="tag" style="color:var(--clay-lt)">Why EasyLiving Goa</div>
-    <h2 class="h2" style="color:#fff">Goa's Most Trusted <em>Property Partner</em></h2>
-    <p class="sub" style="color:rgba(255,255,255,.52)">We live here. We know every lane, every beach road and every emerging neighbourhood — so you don't have to guess.</p>
+    <div class="tag" style="color:#90E0EF">Why EasyLiving Goa</div>
+    <h2 class="h2" style="color:#fff;margin-top:4px">Goa's Most Trusted <em style="color:#90E0EF">Property Partner</em></h2>
+    <p class="sub" style="color:rgba(255,255,255,.5);margin-top:10px">We live here. We know every lane, every beach road and every emerging neighbourhood — so you don't have to guess.</p>
     <div class="why-grid">
       <div class="wcard"><div class="wcard-ico">🏡</div><div class="wcard-num">1,333+</div><div class="wcard-title">Verified Listings</div><div class="wcard-desc">Every property is physically inspected. No fake listings, no outdated prices — only real, verified properties.</div></div>
       <div class="wcard"><div class="wcard-ico">📍</div><div class="wcard-num">90+</div><div class="wcard-title">Goa Locations</div><div class="wcard-desc">From Pernem in the north to Canacona in the south — we cover every village, ward and micro-market in Goa.</div></div>
@@ -590,18 +535,18 @@
 </section>
 
 <!-- SERVICES -->
-<section class="section" style="background:var(--cream)">
+<section class="section" style="background:#fff">
   <div class="container">
     <div style="text-align:center">
       <div class="tag" style="justify-content:center">Our Services</div>
       <h2 class="h2" style="text-align:center">Everything You Need,<br><em>Under One Roof</em></h2>
-      <p class="sub" style="margin:10px auto 0;text-align:center">From your first property visit to the final registration stamp — we handle it all.</p>
+      <p class="sub" style="margin:8px auto 0;text-align:center">From your first property visit to the final registration stamp — we handle it all.</p>
     </div>
     <div class="sgrid">
-      <div class="scard"><div class="scard-ico" style="background:rgba(200,113,74,.1)">🎨</div><div class="scard-title">Interior Design</div><div class="scard-desc">Transform your Goa property with curated tropical and Portuguese-inspired interiors.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
-      <div class="scard"><div class="scard-ico" style="background:rgba(122,140,110,.12)">⚖️</div><div class="scard-title">Legal &amp; Documentation</div><div class="scard-desc">NA conversion, title verification, registration — our Goa-specialist legal team handles it all.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
-      <div class="scard"><div class="scard-ico" style="background:rgba(200,113,74,.08)">🏦</div><div class="scard-title">Loan Assistance</div><div class="scard-desc">Best home loan offers across all major banks. Instant eligibility check, zero paperwork hassle.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
-      <div class="scard"><div class="scard-ico" style="background:rgba(61,43,31,.07)">🏠</div><div class="scard-title">Property Management</div><div class="scard-desc">Own a Goa villa but live elsewhere? We manage tenants, maintenance and Airbnb rentals for you.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+      <div class="scard"><div class="scard-ico" style="background:#EAF6FB">🎨</div><div class="scard-title">Interior Design</div><div class="scard-desc">Transform your Goa property with curated tropical and Portuguese-inspired interiors.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+      <div class="scard"><div class="scard-ico" style="background:#EBF3FB">⚖️</div><div class="scard-title">Legal &amp; Documentation</div><div class="scard-desc">NA conversion, title verification, registration — our Goa-specialist legal team handles it all.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+      <div class="scard"><div class="scard-ico" style="background:#E8F7FC">🏦</div><div class="scard-title">Loan Assistance</div><div class="scard-desc">Best home loan offers across all major banks. Instant eligibility check, zero paperwork hassle.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
+      <div class="scard"><div class="scard-ico" style="background:#EDF4FB">🏠</div><div class="scard-title">Property Management</div><div class="scard-desc">Own a Goa villa but live elsewhere? We manage tenants, maintenance and Airbnb rentals for you.</div><div class="scard-link">Learn More <span class="sarr">→</span></div></div>
     </div>
   </div>
 </section>
@@ -615,7 +560,7 @@
         <h2 class="h2">Know Before You <em>Buy</em></h2>
         <p class="sub">Local market trends, legal guides and expert advice — written by people who actually live in Goa.</p>
       </div>
-      <a href="#" class="btn btn-outline">All Articles →</a>
+      <a href="#" class="btn" style="color:var(--clay);border:1.5px solid #C5DFF0;background:#fff;font-size:13px">All Articles →</a>
     </div>
     <div class="bgrid">
       <div class="bcard">
@@ -686,24 +631,49 @@
     <div class="container">
       <div class="fg">
         <div class="fb">
-          <div class="logo"><div class="logo-mark">E</div><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff">EasyLiving <span style="color:var(--clay-lt)">Goa</span></span></div>
+          <div class="logo">
+            <div class="logo-mark">E</div>
+            <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff">EasyLiving <span style="color:#48CAE4">Goa</span></span>
+          </div>
           <p>Goa's trusted property specialists. Connecting buyers, sellers and renters with verified properties across every corner of Goa since 2009.</p>
-          <div class="sr"><button class="sb">f</button><button class="sb">𝕏</button><button class="sb">in</button><button class="sb">▶</button><button class="sb">📷</button></div>
+          <div class="sr">
+            <button class="sb">f</button>
+            <button class="sb">𝕏</button>
+            <button class="sb">in</button>
+            <button class="sb">▶</button>
+            <button class="sb">📷</button>
+          </div>
         </div>
         <div>
           <div class="fh">Quick Links</div>
-          <ul class="fl"><li><a href="#">Home</a></li><li><a href="#">Buy Property</a></li><li><a href="#">Rent Property</a></li><li><a href="#">Post Your Property</a></li><li><a href="#">About Us</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact Us</a></li></ul>
+          <ul class="fl">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Buy Property</a></li>
+            <li><a href="#">Rent Property</a></li>
+            <li><a href="#">Post Your Property</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
         </div>
         <div>
           <div class="fh">Our Services</div>
-          <ul class="fl"><li><a href="#">Interior Design</a></li><li><a href="#">Legal Services</a></li><li><a href="#">Home Loan Assistance</a></li><li><a href="#">Property Management</a></li><li><a href="#">NA Conversion Help</a></li><li><a href="#">NRI Services</a></li><li><a href="#">Holiday Rental Mgmt</a></li></ul>
+          <ul class="fl">
+            <li><a href="#">Interior Design</a></li>
+            <li><a href="#">Legal Services</a></li>
+            <li><a href="#">Home Loan Assistance</a></li>
+            <li><a href="#">Property Management</a></li>
+            <li><a href="#">NA Conversion Help</a></li>
+            <li><a href="#">NRI Services</a></li>
+            <li><a href="#">Holiday Rental Mgmt</a></li>
+          </ul>
         </div>
         <div>
           <div class="fh">Get In Touch</div>
           <div class="fc">
             <div class="fci"><span class="fci-i">📍</span><span>Shop No. 5, Alfran Plaza,<br>MG Road, Panaji, Goa 403001</span></div>
-            <div class="fci"><span class="fci-i">📞</span><a href="tel:+919326128767" style="color:rgba(255,255,255,.48)">+91 93261 28767</a></div>
-            <div class="fci"><span class="fci-i">✉️</span><a href="mailto:hello@easylivinggoa.in" style="color:rgba(255,255,255,.48)">hello@easylivinggoa.in</a></div>
+            <div class="fci"><span class="fci-i">📞</span><a href="tel:+919326128767">+91 93261 28767</a></div>
+            <div class="fci"><span class="fci-i">✉️</span><a href="mailto:hello@easylivinggoa.in">hello@easylivinggoa.in</a></div>
             <div class="fci"><span class="fci-i">🕐</span><span>Mon–Sat: 9am – 6pm<br>Sun: By Appointment</span></div>
           </div>
         </div>
@@ -713,7 +683,12 @@
   <div class="container">
     <div class="fbot">
       <span>© 2025 EasyLiving Goa. All rights reserved.</span>
-      <div class="fleg"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">FAQ</a><a href="#">Sitemap</a></div>
+      <div class="fleg">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">FAQ</a>
+        <a href="#">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -722,13 +697,24 @@
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 30));
 
+  document.querySelectorAll('.hs-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.hs-tab').forEach(t => t.classList.remove('on'));
+      tab.classList.add('on');
+    });
+  });
+
   function fTab(el, p) {
     document.querySelectorAll('.ftab').forEach(t => t.classList.remove('on'));
     el.classList.add('on');
     document.querySelectorAll('.pc').forEach(c => {
       const show = p === 'All' || c.dataset.p === p;
       c.style.display = show ? 'block' : 'none';
-      if (show) { c.style.opacity = '0'; c.style.transform = 'translateY(16px)'; setTimeout(() => { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, 20); }
+      if (show) {
+        c.style.opacity = '0';
+        c.style.transform = 'translateY(16px)';
+        setTimeout(() => { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, 20);
+      }
     });
   }
 
@@ -742,10 +728,14 @@
   });
 
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
   }, { threshold: 0.08 });
+
   document.querySelectorAll('.pc,.bcard,.scard,.wcard,.ls-pt,.qtype').forEach(el => {
-    el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity .6s ease, transform .6s ease';
     obs.observe(el);
   });
